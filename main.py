@@ -1,51 +1,59 @@
 import turtle
 
-def Square(x, y, size, color, angel):
-    turtle.pendown()
-    turtle.color(color)
-    turtle.penup()
-    turtle.setx(x)
-    turtle.sety(y)
-    turtle.begin_fill()
-    turtle.pendown()
-    turtle.right(angel)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.end_fill()
+turtle.speed(10000000000000000)
+global angel_1
+angel_1=0
 
-def Parallelogram(x, y, size, color, angel):
-    turtle.pendown()
-    turtle.color(color)
+def Square(x,y,size,color,angel):
+    global angel_1
+    turtle.pendown ()
+    turtle.color (color)
+    turtle.penup ()
+    turtle.setx ( x )
+    turtle.sety ( y )
+    turtle.begin_fill ()
+    turtle.pendown ( )
+    turtle.right(angel)
+    turtle.right(angel-angel_1)
+    angel_1= angel_1+angel
+    turtle.forward (size)
+    turtle.right(90)
+    turtle.forward ( size )
+@@ -19,14 +23,16 @@ def Square(x,y,size,color,angel):
+    turtle.forward ( size )
+    turtle.end_fill ()
+def Parallelogram(x,y,size,color,angel):
+    global angel_1
+    turtle.pendown ()
+    turtle.color (color)
+    turtle.penup ()
+    turtle.setx ( x )
+    turtle.sety ( y )
+    turtle.begin_fill ()
+    turtle.pendown ( )
+    turtle.right(angel)
+    turtle.right(angel-angel_1)
+    angel_1 = angel_1+ angel
+    turtle.forward (size)
+    turtle.right(60)
+    turtle.forward ( size )
+@@ -36,42 +42,23 @@ def Parallelogram(x,y,size,color,angel):
+    turtle.forward ( size )
+    turtle.end_fill ()
+def Triangle(x,y,size,color,angel):
+    global angel_1
     turtle.penup()
     turtle.setx(x)
     turtle.sety(y)
-    turtle.begin_fill()
-    turtle.pendown()
-    turtle.right(angel)
-    turtle.forward(size)
-    turtle.right(60)
-    turtle.forward(size)
-    turtle.right(120)
-    turtle.forward(size)
-    turtle.right(60)
-    turtle.forward(size)
-    turtle.end_fill()
-
-def Triangle(x, y, size, color, angel):
-    turtle.penup()
-    turtle.setx(x)
-    turtle.sety(y)
     turtle.color(color)
     turtle.begin_fill()
     turtle.pendown()
     turtle.right(angel)
+    turtle.right(angel-angel_1)
+    angel_1 = angel_1 + angel
     turtle.forward(size)
     turtle.right(60)
+    turtle.right(90)
     turtle.forward(size)
     turtle.end_fill()
 
@@ -73,6 +81,9 @@ Parallelogram(-340,200, 80,"red", 90)
 Triangle(-400,300,66,'brown',90)
 Triangle(-300,-400,0,'green',-80)
 Triangle(-290,300,66,'brown',-300)
+if(angel_1>360):
+    angel_1=angel_1-360
 
 
+Triangle(0,0,700,"#3e83a3",0)
 turtle.mainloop()
