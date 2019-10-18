@@ -57,4 +57,22 @@ Square(45,-45,70,"blue",-30)
 Parallelogram(0,150,160, 'yellow', 30)
 Parallelogram(65,190, 70,"black", 120)
 
+Square(-400,-100,100,"green",90)
+Parallelogram(-350,0, 50,"black", 120)
+Parallelogram(-326,40, 50,"black", 120)
+Triangle(-300,-50,180,'red',240)
+Triangle(-300,-400,40,'green',120)
+
+Triangle(-300,-400,0,'green',-120)
+Square(-400,300,200,"#c49b64",120)
+Square(-340,250,30,"green",90)
+Square(-370,250,30,"white",90)
+Square(-280,250,30,"green",90)
+Square(-250,250,30,"white",90)
+Parallelogram(-340,200, 80,"red", 90)
+Triangle(-400,300,66,'brown',90)
+Triangle(-300,-400,0,'green',-80)
+Triangle(-290,300,66,'brown',-300)
+
+
 turtle.mainloop()
